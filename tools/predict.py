@@ -116,13 +116,13 @@ def save_depoly(model, input, save_path):
 def init_args():
     import argparse
     parser = argparse.ArgumentParser(description='DBNet.pytorch')
-    parser.add_argument('--model_path', default=r'model_best.pth', type=str)
-    parser.add_argument('--input_folder', default='./test/input', type=str, help='img path for predict')
-    parser.add_argument('--output_folder', default='./test/output', type=str, help='img path for output')
+    parser.add_argument('--model_path', default=r'../output/DBNet_resnet18_FPN_DBHead/checkpoint/model_best.pth', type=str)
+    parser.add_argument('--input_folder', default='../test/input', type=str, help='img path for predict')
+    parser.add_argument('--output_folder', default='../test/output', type=str, help='img path for output')
     parser.add_argument('--thre', default=0.3,type=float, help='the thresh of post_processing')
     parser.add_argument('--polygon', action='store_true', help='output polygon or box')
-    parser.add_argument('--show', action='store_true', help='show result')
-    parser.add_argument('--save_resut', action='store_true', help='save box and score to txt file')
+    parser.add_argument('--show', default=True, action='store_true', help='show result')
+    parser.add_argument('--save_result', default=True, action='store_true', help='save box and score to txt file')
     args = parser.parse_args()
     return args
 
